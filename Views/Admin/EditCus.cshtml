@@ -1,0 +1,110 @@
+﻿@model QuanLyThietBiDienTu6.KHACHHANG
+
+@{
+    ViewBag.Title = "EditCus";
+    Layout = null;
+}
+
+<head>
+    
+</head>
+
+
+
+<head>
+    <title>Chỉnh sửa thông tin khách hàng</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            background-color: #1b1b32;
+            color: #f5f6f7;
+            font-family: Tahoma;
+            font-size: 16px;
+        }
+
+        h1, p {
+            margin: 1em auto;
+            text-align: center;
+        }
+
+        form {
+            width: 60vw;
+            max-width: 500px;
+            min-width: 300px;
+            margin: 0 auto;
+            padding-bottom: 2em;
+        }
+
+        fieldset {
+            border: none;
+            padding: 2rem 0;
+        }
+
+            fieldset:not(:last-of-type) {
+                border-bottom: 3px solid #3b3b4f;
+            }
+
+        label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        input,
+        textarea,
+        select {
+            margin: 10px 0 0 0;
+            width: 100%;
+            min-height: 2em;
+        }
+
+        input, textarea {
+            background-color: #0a0a23;
+            border: 1px solid #0a0a23;
+            color: #ffffff;
+        }
+
+        .inline {
+            width: unset;
+            margin: 0 0.5em 0 0;
+            vertical-align: middle;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 60%;
+            margin: 1em auto;
+            height: 2em;
+            font-size: 1.1rem;
+            background-color: #3b3b4f;
+            border-color: white;
+            min-width: 300px;
+        }
+
+        input[type="file"] {
+            padding: 1px 2px;
+        }
+
+        a {
+            color: #dfdfe2;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Chỉnh sửa thông tin khách @Model.HoTen</h1>
+   
+    <form action="/Admin/EditCus/@Model.MaKH" method="post">
+        <fieldset>
+            <label>Họ tên: <input type="text" name="HoTen" /></label>
+            <label>Địa chỉ: <input type="text" name="DC" /></label>
+            <label>SDT: <input type="text" name="DT" /></label>
+            <label>Password: <input type="password" name="MK" /></label>
+            <label>Ngày Sinh: <input type="date" name="NgaySinh" /></label>
+        </fieldset>
+       
+      
+        <input type="submit" value="Save" />
+    </form>
+</body>

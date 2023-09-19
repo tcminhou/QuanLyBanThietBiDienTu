@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QuanLyThietBiDienTu6.Admin>
+
+@{
+    ViewBag.Title = "ListAd";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>ListAd</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã admin
+        </th>
+        <th>
+           Tài khoản
+        </th>
+        <th>
+            Mật khẩu
+        </th>
+        <th>
+            Họ tên
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PassAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditAd", new { @id=item.MaAdmin.Substring(0,4)}) |
+           
+            @Html.ActionLink("Delete", "DeleteAd", new { @id = item.MaAdmin.Substring(0, 4) })
+        </td>
+    </tr>
+}
+
+</table>

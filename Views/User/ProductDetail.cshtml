@@ -1,0 +1,81 @@
+﻿<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+@model QuanLyThietBiDienTu6.SANPHAM
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="~/Template/CSS_PD/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></div>
+                            <div class="tab-pane" id="pic-2"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)"/></div>
+                            <div class="tab-pane" id="pic-4"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)"/></div>
+                            <div class="tab-pane" id="pic-5"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></div>
+                        </div>
+                        <ul class="preview-thumbnail nav nav-tabs">
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></a></li>
+                            <li><a data-target="#pic-2" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></a></li>
+                            <li><a data-target="#pic-3" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)"/></a></li>
+                            <li><a data-target="#pic-4" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)"/></a></li>
+                            <li><a data-target="#pic-5" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></a></li>
+                        </ul>
+
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title">@Model.TenSP</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no">41 reviews</span>
+                        </div>
+
+                        <h4 class="price">Giá tiền: <span>@Model.Giaban</span></h4>
+                        <h4 class="price">Số lượng: <span>@Model.Soluongton</span></h4>
+                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                        <h5 class="sizes">
+                        </h5>
+                        <h5 class="colors">
+                        </h5>
+                        <div class="action">
+                            <a href="@Url.Action("AddCart","ListCart",new { @id=Model.MaSP})"
+                                    class="add-to-cart btn btn-default" type="button">
+                                Thêm vào giỏ hàng
+                            </a>
+
+                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
